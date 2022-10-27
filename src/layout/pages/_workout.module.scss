@@ -1,0 +1,67 @@
+@use '../constants/colors' as color;
+@use '../constants/breakpoints' as bp;
+@use '../constants/_fonts.scss';
+
+.workout {
+  padding: 20px;
+
+  @include bp.md {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__centralized {
+    @include bp.md {
+      display: flex;
+    }
+
+    &__videoContent {
+      @include bp.md {
+        z-index: 4444;
+        width: 900px;
+      }
+
+      &__video {
+        width: 100%;
+        max-height: 506px;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      &__title {
+        text-align: center;
+        color: color.$primary-title;
+        font-family: 'Cairo-SemiBold', sans-serif;
+        @include bp.md {
+          font-size: 40px;
+        }
+      }
+    }
+
+    &__contentCard {
+      background-color: #000;
+      opacity: 0.8;
+      padding: 40px 10px 20px 10px;
+      margin-top: -20px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+
+      @include bp.md {
+        padding: 20px;
+        padding-left: 50px;
+        margin-left: -25px;
+        width: 40%;
+      }
+
+      &__subtitle {
+        color: color.$primary-title;
+      }
+
+      & p:first-letter {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

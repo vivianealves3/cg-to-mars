@@ -1,0 +1,20 @@
+@use '../constants/colors' as color;
+@use '../constants/_breakpoints' as bp;
+@use '../constants/_fonts.scss';
+
+.home {
+  padding: 40px 20px;
+
+  &__title {
+    font-family: 'Cairo-ExtraBold', sans-serif;
+    color: color.$primary-title;
+    text-align: center;
+
+    @include bp.sm {
+      font-size: 40px;
+    }
+    @include bp.md {
+      font-size: 60px;
+    }
+  }
+}
